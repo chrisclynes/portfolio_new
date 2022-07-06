@@ -1,8 +1,15 @@
-import  React from 'react';
+import React from 'react';
+import { About, Footer, Header, Projects, Skills } from './container'
 
 const App = () => {
     return ( 
-        <div> Hello</div>
+        <div className="app">
+           <Header />
+           <About />
+           <Projects />
+           <Skills />
+           <Footer />
+        </div>
     )
 }
 
