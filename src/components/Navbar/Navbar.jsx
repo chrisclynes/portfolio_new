@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { images } from '../../constants';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { MdOutlineClose } from 'react-icons/md';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { motion } from 'framer-motion';
 
 import './Navbar.scss';
 
+const menuItems = ['home', 'about', 'projects', 'skills', 'contact' ];
 
 const { logo } = images;
 const Navbar = () => {
@@ -15,7 +17,7 @@ const Navbar = () => {
                 <img src={logo} alt="logo img" />
             </div>
             <ul className="app__navbar-links">
-                {['home', 'about', 'projects', 'skills', 'contact' ].map((item) => (
+                {menuItems.map((item) => (
                     <li className="p-text app__flex" key={`desktop-${item}`}>
                         <div>
                             <a href={`#${item}`}>{item}</a>
@@ -24,16 +26,17 @@ const Navbar = () => {
                 ))}
             </ul>
             <div className="app__navbar-menu">
-                <HiMenuAlt4 onClick={() => setToggleMenu(true)}/>
-                {toggleMenu &&
+                <GiHamburgerMenu onClick={() => setToggleMenu(true)}/>
+                {toggleMenu && (
+                // container for mobile nav menu
                    <motion.div
                         whileInView={{ x: [300, 0] }}
-                        transition={{ duration: 0.45, ease: 'easeOut' }}
+                        transition={{ duration: 0.35, ease: 'easeOut' }}
                    >
-                     <HiX onClick={() => setToggleMenu(false)}/>
-                        {['home', 'about', 'projects', 'skills', 'contact' ].map((item) => (
+                     <MdOutlineClose onClick={() => setToggleMenu(false)}/>
+                     <ul>
+                       {menuItems.map((item) => (
                             <li key={`mobile-${item}`}>
-                                <div>
                                     {/* close mobile menu after item selected */}
                                     <a 
                                         href={`#${item}`} 
@@ -41,11 +44,11 @@ const Navbar = () => {
                                     >
                                         {item}
                                     </a>
-                                </div>
                             </li>
                          ))}
+                        </ul>
                    </motion.div> 
-                }
+                )}
             </div>
         </nav>
     )
