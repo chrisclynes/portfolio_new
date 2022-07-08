@@ -36,12 +36,9 @@ const Navbar = () => {
                      <MdOutlineClose onClick={() => setToggleMenu(false)}/>
                      <ul>
                        {menuItems.map((item) => (
-                            <li key={`mobile-${item}`}>
+                            <li key={item}>
                                     {/* close mobile menu after item selected */}
-                                    <a 
-                                        href={`#${item}`} 
-                                        onClick={() => setToggleMenu(false)}
-                                    >
+                                    <a href={`#${item}`} onClick={() => setToggleMenu(false)}>
                                         {item}
                                     </a>
                             </li>

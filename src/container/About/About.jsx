@@ -16,7 +16,7 @@ const About = () => {
 
     return (
         <>
-            <div style={{backgroundColor: "lightblue"}}>
+            <div >
                 <h2 className="head-text">
                     <span>Something meaningful here</span>
                 </h2>
