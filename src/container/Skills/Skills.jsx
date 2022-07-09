@@ -4,12 +4,23 @@ import { AppWrapper } from '../../wrapper';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { ReactTooltip } from 'react-tooltip';
 
-
+import { images } from '../../constants';
 import './Skills.scss';
 
-const Skills = () => {
 
-    const skillsArr = [];
+const Skills = () => {
+    const {sass, react, figma, node, git, html, javascript, css} = images
+    const skillsArr = [
+        {name: "JavaScript", icon: javascript, bkg: "#fff" },
+        {name: "React JS", icon: react, bkg: "#fff" },
+        {name: "SASS", icon: sass, bkg: "#fff" },
+        {name: "Figma", icon: figma, bkg: "#fff" },
+        {name: "Node JS", icon: node, bkg: "#fff" },
+        {name: "Git", icon: git, bkg: "#fff" },
+        {name: "HTML 5", icon: html, bkg: "#fff" },
+        {name: "CSS", icon: css, bkg: "#fff" },
+    ];
+    
     return (
         <>
             <h2 className="head-text">Experience</h2>
@@ -23,12 +34,12 @@ const Skills = () => {
                             key={skill.name}
                         >
                             <div className="app__flex" style={{backgroundColor: skill.bkg}}>
-                                <img src={skill.icon} alt="icon" />
+                                <img src={skill.icon} alt={`icon${i}`} />
                             </div>
+                            <p className="p-text">{skill.name}</p>
                         </motion.div>    
                     ))}
                 </motion.div>
-
             </div>
         </>
     )

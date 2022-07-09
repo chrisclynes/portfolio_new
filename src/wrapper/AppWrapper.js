@@ -6,9 +6,6 @@ const AppWrapper = (Component, idName, classNames) => function HOC() {
             <SocialMedia />
             <div className="app__wrapper app__flex">
                 <Component />
-                <div className="copyright">
-                    <p className="p-text">Clynes Portfolio 2022</p>
-                </div>
             </div>
             <NavigationDots active={idName} />
         </div>

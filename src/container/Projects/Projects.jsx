@@ -27,10 +27,10 @@ const Projects = () => {
 
     const handleFilter = (item) => {
         setActiveFilter(item);
-        setAnimateCard([{x:100, opacity: 0}]);
+        setAnimateCard([{opacity: 0}]);
 
         setTimeout(() => {
-            setAnimateCard([{x:0, opacity: 1}]);
+            setAnimateCard([{ opacity: 1}]);
             if(item === 'All') {
                 setFilteredData(projectsArr);
             }else {
@@ -48,13 +48,9 @@ const Projects = () => {
                 {['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'].map((item, i) => (
                     <motion.div 
                     key={i}
-                    initial="hidden"
-                    whileInView="visible"
+                    initial={{y: -30, opacity: 0}}
                     animate={{y: 0, opacity: 1}}
-                    transition={{ duration: 0.5, }}
-                    variants={{
-                        hidden: {y: -60, opacity: 0}
-                      }}
+                    transition={{ duration: 0.5 + (i/9) }}
                     onClick={() => handleFilter(item)}
                     className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
                     > 
