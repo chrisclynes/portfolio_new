@@ -11,17 +11,28 @@ const { about01, about02, about03 } = images;
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('All');
     const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
+    const [filteredData, setFilteredData] = useState([]);
 
-    const handleWorkFilter = () => {
+    const handleFilter = (item) => {
+        setActiveFilter(item);
+        setAnimateCard([{x:100, opacity: 0}]);
 
+        setTimeout(() => {
+            setAnimateCard([{x:0, opacity: 1}]);
+            if(item === 'All') {
+                setFilteredData(projectsArr);
+            }else {
+                setFilteredData(projectsArr.filter((project) => project.tags.includes(item)));
+            }
+        }, 500);
     }
     //PROJECTS
     const projectsArr = [
-        {name: "Guitar Toolbox", description: "React JS app for guitar training", link: "", codeLink: "", img: about01, tags: [""] },
-        {name: "Web Dex", description: "Google clone app", link: "", codeLink: "", img: about02, tags: [""] },
-        {name: "Notes", description: "JS notes appication", link: "", codeLink: "", img: about03, tags: [""] },
-        {name: "Restaurant Site", description: "React UI/UX site", link: "", codeLink: "", img: about01, tags: [""] },
-        {name: "Weather API", description: "Weather application", link: "", codeLink: "", img: about02, tags: [""] },
+        {name: "Guitar Toolbox", description: "React JS app for guitar training", link: "", codeLink: "", img: about01, tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
+        {name: "Web Dex", description: "Google clone app", link: "", codeLink: "", img: about02, tags: ["API", "React JS", "Mobile"] },
+        {name: "Notes", description: "JS notes appication", link: "", codeLink: "", img: about03, tags: ["React JS"] },
+        {name: "Restaurant Site", description: "React UI/UX site", link: "", codeLink: "", img: about01, tags: ["UI/UX", "Mobile", "React JS"] },
+        {name: "Weather API", description: "Weather application", link: "", codeLink: "", img: about02, tags: ["API"] },
     ]
     return (
         <>
@@ -29,10 +40,10 @@ const Projects = () => {
                     <span>My Projects</span>
             </h2>
             <div className="app__work-filter">
-                {['UI/UX', 'API', 'Mobile App', 'React JS', 'All'].map((item, i) => (
+                {['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'].map((item, i) => (
                     <div 
                     key={i}
-                    onClick={() => handleWorkFilter(item)}
+                    onClick={() => handleFilter(item)}
                     className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
                     > 
                         {item}
@@ -44,7 +55,7 @@ const Projects = () => {
                 transition={{ duration: 0.5, delayChildren: 0.5 }}
                 className="app__work-portfolio"
             >
-                {projectsArr.map((project, i) => (
+                {filteredData.map((project, i) => (
                     <div className="app__work-item app__flex" key={i}>
                         <div className="app__work-img app__flex">
                             <img src={project.img} alt={project.name} />
