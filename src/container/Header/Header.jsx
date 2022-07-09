@@ -9,8 +9,9 @@ const Header = () => {
     return (
         <div className="app__header app__flex">
             <motion.div
-                whileInView={{ x: [-100, 0], opacity: [0, 1]}}
-                transition={{duration: 0.5 }}
+                initial={{ x: -500, opacity: 0}}
+                animate={{x: 0, opacity: 1}}
+                transition={{ type: 'spring', duration: 0.75, bounce: 0.5 }}
                 className="app__header-info"
             >
                 <div className="app__header-badge">
