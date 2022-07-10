@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { AppWrapper } from '../../wrapper';
+import { AppWrapper, MotionWrap } from '../../wrapper';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 import './Projects.scss';
@@ -108,4 +108,8 @@ const Projects = () => {
     )
 }
 
-export default AppWrapper(Projects, "projects");
+export default AppWrapper(
+    MotionWrap(Projects, "app__works"), 
+    "projects",
+    "app__primarybg"
+);

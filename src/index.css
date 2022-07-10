@@ -3,14 +3,24 @@
 :root {
   --font-base: "DM Sans", sans-serif;
   /* ---------colors--------- */
-  --primary-color: #edf2f8;
-  --secondary-color: #313bac;
-  --black-color: #030303;  /*black-color*/
-  --lightGray-color: #e4e4e4;  /*lightgray-color*/
-  --text1-color: #6b7688; /*gray-color*/
-  --brown-color: #46364a;  /*brown-color*/
+  --primary-color: #222629;
+  --secondary-color: #86C232;
+  --black-color: #474B4F;  /*black-color*/
+  --lightGray-color: #6B6E70;  /*lightgray-color*/
+  --text1-color: #FEFFFF; /*gray-color*/
   --white-color: #ffffff;
 }
+
+/* :root {
+  --font-base: "DM Sans", sans-serif;
+  --primary-color: #edf2f8;
+  --secondary-color: #313bac;
+  --black-color: #030303;  
+  --lightGray-color: #e4e4e4;  
+  --text1-color: #6b7688; 
+  --brown-color: #46364a;  
+  --white-color: #ffffff;
+} */
 
 * {
   box-sizing: border-box;

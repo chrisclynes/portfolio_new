@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AppWrapper } from '../../wrapper'
+import { AppWrapper, MotionWrap } from '../../wrapper'
 import { motion } from 'framer-motion';
 
 
@@ -40,4 +40,8 @@ const About = () => {
     )
 }
 
-export default AppWrapper(About, "about");
+export default AppWrapper(
+    MotionWrap(About, "app__about"), 
+    "about",
+    "app__whitebg"
+);

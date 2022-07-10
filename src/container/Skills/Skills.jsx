@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AppWrapper } from '../../wrapper';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { ReactTooltip } from 'react-tooltip';
+import { AppWrapper, MotionWrap } from '../../wrapper';
 
 import { images } from '../../constants';
 import './Skills.scss';
@@ -12,14 +9,14 @@ const Skills = () => {
     const {sass, react, figma, node, git, html, javascript, css} = images
     //add to skills
     const skillsArr = [
-        {name: "JavaScript", icon: javascript, bkg: "#fff" },
-        {name: "React JS", icon: react, bkg: "#fff" },
-        {name: "SASS", icon: sass, bkg: "#fff" },
-        {name: "Figma", icon: figma, bkg: "#fff" },
-        {name: "Node JS", icon: node, bkg: "#fff" },
-        {name: "Git", icon: git, bkg: "#fff" },
-        {name: "HTML 5", icon: html, bkg: "#fff" },
-        {name: "CSS", icon: css, bkg: "#fff" },
+        {name: "JavaScript", icon: javascript },
+        {name: "React JS", icon: react },
+        {name: "SASS", icon: sass },
+        {name: "Figma", icon: figma },
+        {name: "Node JS", icon: node },
+        {name: "Git", icon: git },
+        {name: "HTML 5", icon: html },
+        {name: "CSS", icon: css },
     ];
     //add to experiences
     const experienceArr = [
@@ -38,7 +35,7 @@ const Skills = () => {
                             className="app__skills-item app__flex"
                             key={skill.name}
                         >
-                            <div className="app__flex" style={{backgroundColor: skill.bkg}}>
+                            <div className="app__flex">
                                 <img src={skill.icon} alt={`icon${i}`} />
                             </div>
                             <p className="p-text">{skill.name}</p>
@@ -68,4 +65,8 @@ const Skills = () => {
     )
 }
 
-export default AppWrapper(Skills, "skills");
+export default AppWrapper(
+    MotionWrap(Skills, "app__skills"), 
+    "skills",
+    "app__whitebg"
+);

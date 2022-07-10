@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
+  background: #60892fce;
   box-shadow: 0 8px 32px 0 rgba(3, 3, 10, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -52,7 +52,7 @@
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: var(--secondary-color);
+        color: var(--primary-color);
       }
     }
 
@@ -125,7 +125,7 @@
         margin: 1rem;
 
         a {
-          color: var(--text1-color);
+          color: var(--primary-color);
           text-decoration: none;
           font-size: 1rem;
           text-transform: uppercase;
