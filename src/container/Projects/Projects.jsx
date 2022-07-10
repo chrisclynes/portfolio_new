@@ -64,7 +64,10 @@ const Projects = () => {
                 className="app__work-portfolio"
             >
                 {filteredData?.map((project, i) => (
-                    <div className="app__work-item app__flex" key={i}>
+                    <div className="app__work-item app__flex" key={project.name}>
+                        <div className="app__work-title app__flex">
+                            <h4 className="bold-text">{project.name}</h4>
+                        </div>
                         <div className="app__work-img app__flex">
                             <img src={project.img} alt={project.name} />
                             <motion.div
@@ -95,11 +98,7 @@ const Projects = () => {
                             </motion.div>
                         </div>
                         <div className="app__work-content app__flex">
-                            <h4 className="bold-text">{project.name}</h4>
                             <p className="p-text" style={{marginTop: 10}}>{project.description}</p>
-                            <div className="app__work-tag app__flex">
-                                <p className="p-text">{project.tags[0]}</p>
-                            </div>
                         </div>
                     </div>
                 ))}

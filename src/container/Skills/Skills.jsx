@@ -7,6 +7,7 @@ import './Skills.scss';
 
 const Skills = () => {
     const {sass, react, figma, node, git, html, javascript, css} = images
+    
     //add to skills
     const skillsArr = [
         {name: "JavaScript", icon: javascript },
@@ -43,7 +44,7 @@ const Skills = () => {
                     ))}
                 </motion.div>
                 <motion.div className="app__skills-exp">
-                    {experienceArr.map((work) => (
+                    {experienceArr.map((work, i) => (
                         <>
                             <motion.div
                                whileInView={{opacity: [0,1]}}
@@ -51,7 +52,7 @@ const Skills = () => {
                                className="app__skills-exp-work"
                                data-tip
                                data-for={work.name}
-                               key={work.name} 
+                               key={i} 
                             >
                                 <h4 className="bold-text">{work.name}</h4>
                                 <p className="p-text">{work.company}</p>
