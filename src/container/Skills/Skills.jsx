@@ -10,6 +10,7 @@ import './Skills.scss';
 
 const Skills = () => {
     const {sass, react, figma, node, git, html, javascript, css} = images
+    //add to skills
     const skillsArr = [
         {name: "JavaScript", icon: javascript, bkg: "#fff" },
         {name: "React JS", icon: react, bkg: "#fff" },
@@ -20,6 +21,10 @@ const Skills = () => {
         {name: "HTML 5", icon: html, bkg: "#fff" },
         {name: "CSS", icon: css, bkg: "#fff" },
     ];
+    //add to experiences
+    const experienceArr = [
+        {name: "IT Technician", company: "UPS", description: "Technical support for computer systems and network infrastructure" },
+    ]
     
     return (
         <>
@@ -38,6 +43,24 @@ const Skills = () => {
                             </div>
                             <p className="p-text">{skill.name}</p>
                         </motion.div>    
+                    ))}
+                </motion.div>
+                <motion.div className="app__skills-exp">
+                    {experienceArr.map((work) => (
+                        <>
+                            <motion.div
+                               whileInView={{opacity: [0,1]}}
+                               transition={{duration: 0.5}}
+                               className="app__skills-exp-work"
+                               data-tip
+                               data-for={work.name}
+                               key={work.name} 
+                            >
+                                <h4 className="bold-text">{work.name}</h4>
+                                <p className="p-text">{work.company}</p>
+                                <span>{work.description}</span>
+                            </motion.div>
+                        </>
                     ))}
                 </motion.div>
             </div>

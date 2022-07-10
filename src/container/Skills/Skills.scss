@@ -80,3 +80,15 @@
       }
     }
   }
+
+  .app__skills-exp {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @media screen and (max-width: 900px) {
+      margin-top: 2rem;
+    }
+  }
+
