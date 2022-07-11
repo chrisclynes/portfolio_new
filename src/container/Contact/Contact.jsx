@@ -11,11 +11,26 @@ const Contact = () => {
     
 
     const handleInput = (e) => {
-        console.log(e)
+        const { name, value } = e.target;
+        setContactForm({
+            ...contactForm,
+            //dynamic way to update values based on the "name" of the event
+            [name]: value
+        })
     }
 
     const handleSubmit = () => {
-        
+        setIsLoading(true);
+        const contact = {
+            _type: 'contact',
+            name: name,
+            email: email,
+            message: message
+        }
+
+
+        setIsLoading(false);
+        setSubmitted(true);
     }
 
     const { name, email, message } = contactForm;
@@ -33,44 +48,50 @@ const Contact = () => {
                     <a href="tel: (636) 385-0180" className="p-text">(636) 385-0180</a>
                 </div>
             </div>
-            <div className="app__footer-form app__flex">
-                <div className="app__flex">
-                    <input 
-                        name="name" 
-                        type="text" 
-                        placeholder="Enter your name" 
-                        value={name} 
-                        onChange={handleInput} 
-                    />
+            {!submitted ?
+                <div className="app__footer-form app__flex">
+                
+                    <div className="app__flex">
+                        <input 
+                            name="name" 
+                            type="text" 
+                            placeholder="Enter your name" 
+                            value={name} 
+                            onChange={handleInput} 
+                        />
+                    </div>
+                    <div className="app__flex">
+                        <input 
+                            name="email" 
+                            type="email" 
+                            placeholder="Enter your email" 
+                            value={email} 
+                            onChange={handleInput} 
+                        />
+                    </div>
+                    <div className="app__flex">
+                        <textarea 
+                            name="message"
+                            className="p-text" 
+                            placeholder="Send me a message" 
+                            value={message} 
+                            onChange={handleInput} 
+                        />
+                    </div>
+                    <button 
+                        type="button"
+                        className="p-text"
+                        onClick={handleSubmit}
+                        disabled={isLoading ? true : false} 
+                    >
+                        {isLoading ? "Sending" : "Send"} 
+                    </button>
                 </div>
-                <div className="app__flex">
-                    <input 
-                        name="email" 
-                        type="email" 
-                        placeholder="Enter your email" 
-                        value={email} 
-                        onChange={handleInput} 
-                    />
+                :
+                <div className="app__footer-form app__flex">
+                    <h4 className="head-text2">Thank you!</h4>
                 </div>
-                <div className="app__flex">
-                    <textarea 
-                        name="message"
-                        className="p-text" 
-                        placeholder="Send me a message" 
-                        value={message} 
-                        onChange={handleInput} 
-                    />
-                </div>
-                <button 
-                    type="button"
-                    className="p-text"
-                    onClick={handleSubmit}
-                    disabled={isLoading ? true : false} 
-                >
-                    {isLoading ? "Sending" : "Send"} 
-                </button>
-            </div>
-
+            }
         </>
     )
 }
