@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { images } from '../../constants';
 import { MdOutlineClose } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { motion } from 'framer-motion';
@@ -8,13 +7,13 @@ import './Navbar.scss';
 
 const menuItems = ['home', 'about', 'projects', 'skills', 'contact' ];
 
-const { logo } = images;
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     return (
         <nav className="app__navbar">
             <div className="app__navbar-logo">
-                <img src={logo} alt="logo img" />
+                <h3 className="logo-text" style={{color: "var(--primary-color)"}}>Chris</h3>
+                <h3 className="logo-text">Clynes</h3>
             </div>
             <ul className="app__navbar-links">
                 {menuItems.map((item) => (

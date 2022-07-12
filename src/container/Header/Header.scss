@@ -1,11 +1,6 @@
 #home {
     position: relative;
-    // background-image: url("../../images/bkg.jpg");
-    // background-repeat: repeat;
-    // background-size: cover;
-    // background-position: center;
   
-    // disable the default padding styles
     .app__wrapper {
       padding: 0;
   
@@ -21,12 +16,9 @@
     height: 100%;
     flex-direction: row;
     background: transparent;
-   
-  
-    padding: 6rem 2rem 0rem;
   
     @media screen and (min-width: 2000px) {
-      padding-top: 8rem;
+
     }
   
     @media screen and (max-width: 1200px) {
@@ -34,55 +26,44 @@
     }
   
     @media screen and (max-width: 450px) {
-      padding: 6rem 1rem 2rem;
+     
     }
   }
   
   .app__header-info {
-    flex: 0.65;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-  
-    margin: 0 2rem;
   
     @media screen and (max-width: 1200px) {
       width: 100%;
-      margin-right: 0rem;
     }
   }
   
   .app__header-badge {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   
-    .badge-cmp,
-    .tag-cmp {
-      padding: 1rem 2rem;
-      background: var(--white-color);
-      border-radius: 15px;
-      flex-direction: row;
+    .app__title,
+    .sub-tag {
       width: auto;
-  
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     }
   
-    .tag-cmp {
-      flex-direction: column;
-      margin-top: 3rem;
+    .sub-tag {
+      margin-top: 2rem;
   
       p {
         width: 100%;
         text-transform: uppercase;
-        text-align: right;
+        text-align: center;
       }
     }
-  
+
     span {
       font-size: 2.5rem;
   
@@ -91,8 +72,4 @@
       }
     }
   
-    @media screen and (max-width: 1200px) {
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
   }
