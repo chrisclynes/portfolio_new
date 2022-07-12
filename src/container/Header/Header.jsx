@@ -14,7 +14,7 @@ const Header = () => {
                         </div>
                     </div> 
                 <motion.div
-                    initial={{ x: -500, opacity: 0}}
+                    initial={{ x: -100, opacity: 0}}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ type: 'spring', delay: 1, duration: 1, bounce: 0.5 }}
                     className="app__header-info"
@@ -25,9 +25,9 @@ const Header = () => {
                 </motion.div>
             </div>
             <motion.div
-                    initial={{ x: 300, opacity: 0}}
+                    initial={{ x: 30, opacity: 0}}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 2, duration: 0.5 }}
+                    transition={{ delay: 1.5, duration: 0.5 }}
                     className="app__projects-btn"
                 >
                     <div className="projects-btn app__flex">

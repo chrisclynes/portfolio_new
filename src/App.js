@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { About, Contact, Header, Projects, Skills } from './container'
 import { Navbar } from './components';
+import { SiderWrap } from './wrapper';
 
 import './App.scss';
 
 const App = () => {
+    const [activePage, setActivePage] = useState("home")
     return ( 
         <div className="app">
-        <Navbar />
+           <Navbar />
            <Header />
            <About />
            <Projects />
@@ -17,4 +19,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default SiderWrap(App, "home");

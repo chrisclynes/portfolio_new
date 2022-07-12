@@ -20,7 +20,6 @@
 
   img {
     width: 138px;
-    
 
     @media screen and (min-width: 2000px) {
       width: 180px;
@@ -98,7 +97,7 @@
     right: 0;
     z-index: 5;
     padding: 1rem;
-    width: 60%;
+    width: 300px;
     height: 100vh;
     background-color: var(--white-color);
     
@@ -137,10 +136,6 @@
           }
         }
       }
-    }
-
-    @media screen and (min-width: 900px) {
-      display: none;
     }
   }
 
