@@ -112,6 +112,19 @@
       font-size: 1.35rem;
     }
   }
+
+  .alt-text {
+    font-size: 1.35rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--white-color);
+    text-transform: capitalize;
+  
+    @media screen and (min-width: 2000px) {
+      font-size: 1.75rem;
+    }
+  
+  }
   
   .bold-text {
     font-size: 1rem;

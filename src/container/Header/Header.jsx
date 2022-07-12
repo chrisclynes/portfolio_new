@@ -24,6 +24,16 @@ const Header = () => {
                     </div>
                 </motion.div>
             </div>
+            <motion.div
+                    initial={{ x: 300, opacity: 0}}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 2, duration: 0.5 }}
+                    className="app__projects-btn"
+                >
+                    <div className="projects-btn app__flex">
+                        <a href="#projects" className="alt-text">Projects</a>
+                    </div>
+                </motion.div>
         </div>
     )
 }
