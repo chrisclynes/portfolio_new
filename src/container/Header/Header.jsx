@@ -39,4 +39,4 @@ const Header = () => {
 }
 //wraps component in Higher order component to handle navigation/links throughout page
 //wrapper sets each section 100 view height 100% of screen
-export default AppWrapper(Header, 'home');
+export default AppWrapper(Header, "home",);

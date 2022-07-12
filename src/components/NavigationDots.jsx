@@ -1,7 +1,6 @@
-
+import { menuItems } from "../App";
 
 const NavigationDots = ({ active }) => {
-    const menuItems = ['home', 'about', 'projects', 'skills', 'contact' ];
     return (
         <div className="app__navigation">
              {menuItems.map((item, i) => (
@@ -9,7 +8,7 @@ const NavigationDots = ({ active }) => {
                     href={`#${item}`} 
                     key={item+i}
                     className="app__navigation-dot"
-                    style={active === item ? {backgroundColor: 'var(--secondary-color)'} : {}}
+                    style={active === item ? {backgroundColor: 'var(--secondary-color)', transform: "scale(1.3)"} : {}}
                 />
             ))}
         </div>
