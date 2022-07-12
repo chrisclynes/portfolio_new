@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { About, Contact, Header, Projects, Skills } from './container'
 import { Navbar } from './components';
-import { SiderWrap } from './wrapper';
+import { NavigationDots, SocialMedia } from './components';
 
 import './App.scss';
 
 const App = () => {
     const [activePage, setActivePage] = useState("home")
     return ( 
-        <div className="app">
-           <Navbar />
-           <Header />
-           <About />
-           <Projects />
-           <Skills />
-           <Contact />
+        <div className="wrap__container">
+            <SocialMedia />
+            <NavigationDots active={activePage}/>
+            <div className="app">
+                <Navbar />
+                <Header />
+                <About />
+                <Projects />
+                <Skills />
+                <Contact />
+            </div>
         </div>
     )
 }
 
-export default SiderWrap(App, "home");
+export default App;
