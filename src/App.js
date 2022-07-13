@@ -24,24 +24,27 @@ const App = () => {
       }, [pageHeight]);
 
     useEffect(() => {
-        const handleNav = () => {
-            const fullHeight = (pageHeight.current*pageSections.length);
+        const scrollSpy = () => {
+            const len = pageSections.length;
+            const fullHeight = (pageHeight.current*len);
             const scrollTop = window.scrollY
             const hashmap = {};
-            //math for half of page height, triggers next active nav dot
-            // const index = Math.floor((((scrollTop-(pageHeight.current/2))/fullHeight)*pageSections.length))
-            //     setActivePage(pageSections[index+1])
             pageSections.forEach((section, i) => {
                 const height = document.querySelector(`#${section}`).offsetHeight;
-                hashmap[i] = i === 0 ? height : height + hashmap[i-1];
+                hashmap[i] = i === 0 ? height/2 : height + hashmap[i-1];
             })
-            
-            
+            for(let i = 0; i < len; i++){
+                if(scrollTop < hashmap[0]){
+                    setActivePage(pageSections[0])
+                }else if(scrollTop < hashmap[i] && scrollTop > hashmap[i-1]){
+                    setActivePage(pageSections[i])
+                }
+            }
         }
-        
-        window.addEventListener('scroll', handleNav)
+        scrollSpy()
+        window.addEventListener('scroll', scrollSpy)
 
-        return () => window.removeEventListener('scroll', handleNav)
+        return () => window.removeEventListener('scroll', scrollSpy)
     }, [pageHeight])
 
    
