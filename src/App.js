@@ -10,6 +10,7 @@ export const pageSections = ['home', 'about', 'projects', 'skills', 'contact' ];
 const App = () => {
     const [activePage, setActivePage] = useState("");
     const pageHeight = useRef(window.innerHeight);
+    const pageLoaded = useRef(false);
     
 
     useEffect(() => {
@@ -26,13 +27,15 @@ const App = () => {
     useEffect(() => {
         const scrollSpy = () => {
             const len = pageSections.length;
-            const fullHeight = (pageHeight.current*len);
             const scrollTop = window.scrollY
             const hashmap = {};
+            //build hashMap for each section height middle point, 
+            //this changes dynamically based on window size and section size
             pageSections.forEach((section, i) => {
                 const height = document.querySelector(`#${section}`).offsetHeight;
                 hashmap[i] = i === 0 ? height/2 : height + hashmap[i-1];
             })
+            //loop values and compare current y position to determine active section
             for(let i = 0; i < len; i++){
                 if(scrollTop < hashmap[0]){
                     setActivePage(pageSections[0])
@@ -41,9 +44,13 @@ const App = () => {
                 }
             }
         }
-        scrollSpy()
-        window.addEventListener('scroll', scrollSpy)
-
+        //load once onload, determines position on refresh or initial load
+        if(pageLoaded.current) {
+            console.log('loaded')
+            scrollSpy()
+        } 
+        window.addEventListener('scroll', scrollSpy);
+        pageLoaded.current = true;
         return () => window.removeEventListener('scroll', scrollSpy)
     }, [pageHeight])
 
