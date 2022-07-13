@@ -5,7 +5,7 @@ import { NavigationDots, SocialMedia } from './components';
 
 import './App.scss';
 
-export const menuItems = ['home', 'about', 'projects', 'skills', 'contact' ];
+export const pageSections = ['home', 'about', 'projects', 'skills', 'contact' ];
 
 const App = () => {
     const [activePage, setActivePage] = useState("");
@@ -15,28 +15,30 @@ const App = () => {
         const updateWindowHeight = () => {
           const newHeight = window.innerHeight;
             setPageHeight(newHeight);
+            
         };
-    
         window.addEventListener("resize", updateWindowHeight);
     
         return () => window.removeEventListener("resize", updateWindowHeight) 
       }, [pageHeight]);
 
     useEffect(() => {
-        const handleNav = () => {
-            const scrollTop = window.scrollY
-            if(scrollTop < pageHeight/2){
-                setActivePage("home")
-            }else {
-                setActivePage("contact")
-            }
-            console.log(pageHeight);
-        }
+        
         window.addEventListener('scroll', handleNav)
 
         return () => window.removeEventListener('scroll', handleNav)
-    }, [])
+    }, [pageHeight])
 
+    const handleNav = () => {
+        const len = pageSections.length;
+        const scrollTop = window.scrollY
+        if(scrollTop < (pageHeight*len)){
+            setActivePage(pageSections[0])
+        }else {
+            setActivePage(pageSections[4])
+        }
+        console.log(pageHeight);
+    }
    
     
     return ( 

@@ -1,9 +1,9 @@
-import { menuItems } from "../App";
+import { pageSections } from "../App";
 
 const NavigationDots = ({ active }) => {
     return (
         <div className="app__navigation">
-             {menuItems.map((item, i) => (
+             {pageSections.map((item, i) => (
                 <a 
                     href={`#${item}`} 
                     key={item+i}
