@@ -24,7 +24,7 @@ const About = () => {
                 <div className="app__profiles">
                     {aboutArr.map((about, index) => (
                         <motion.div
-                            whileInView={{ opacity: 1 }}
+                            whileInView={({ opacity: 1 })}
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.5, type: 'tween' }}
                             className="app__profile-item"
@@ -42,7 +42,7 @@ const About = () => {
 }
 
 export default AppWrapper(
-    MotionWrap(About, "app__about"), 
+    MotionWrap(About, "app__about", "about"), 
     "about",
     "app__whitebg"
 );

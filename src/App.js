@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { About, Contact, Header, Projects, Skills } from './container'
 import { Navbar } from './components';
 import { NavigationDots, SocialMedia } from './components';
@@ -9,12 +9,13 @@ export const pageSections = ['home', 'about', 'projects', 'skills', 'contact' ];
 
 const App = () => {
     const [activePage, setActivePage] = useState("");
-    const [pageHeight, setPageHeight] = useState("");
+    const pageHeight = useRef(window.innerHeight);
+    
 
     useEffect(() => {
         const updateWindowHeight = () => {
           const newHeight = window.innerHeight;
-            setPageHeight(newHeight);
+            pageHeight.current = newHeight;
             
         };
         window.addEventListener("resize", updateWindowHeight);
@@ -23,22 +24,27 @@ const App = () => {
       }, [pageHeight]);
 
     useEffect(() => {
+        const handleNav = () => {
+            const fullHeight = (pageHeight.current*pageSections.length);
+            const scrollTop = window.scrollY
+            const hashmap = {};
+            //math for half of page height, triggers next active nav dot
+            // const index = Math.floor((((scrollTop-(pageHeight.current/2))/fullHeight)*pageSections.length))
+            //     setActivePage(pageSections[index+1])
+            pageSections.forEach((section, i) => {
+                const height = document.querySelector(`#${section}`).offsetHeight;
+                hashmap[i] = i === 0 ? height : height + hashmap[i-1];
+            })
+            
+            
+        }
         
         window.addEventListener('scroll', handleNav)
 
         return () => window.removeEventListener('scroll', handleNav)
     }, [pageHeight])
 
-    const handleNav = () => {
-        const len = pageSections.length;
-        const scrollTop = window.scrollY
-        if(scrollTop < (pageHeight*len)){
-            setActivePage(pageSections[0])
-        }else {
-            setActivePage(pageSections[4])
-        }
-        console.log(pageHeight);
-    }
+   
    
     
     return ( 

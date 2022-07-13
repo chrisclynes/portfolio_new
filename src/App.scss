@@ -203,9 +203,8 @@
   
   .app__navigation {
     position: fixed;
-    top: 0;
+    top: 50%;
     right: 0;
-    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,11 +219,9 @@
       background-color: #cbcbcb;
       margin: 0.5rem;
       transition: background-color 0.2s ease-in-out;
-      
   
       &:hover {
         background-color: var(--secondary-color);
-        
       }
   
       @media screen and (min-width: 2000px) {
