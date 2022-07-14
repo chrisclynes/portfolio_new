@@ -142,28 +142,17 @@
       align-items: center;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-  
-      a {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-
-          svg {
-          width: 30px;
-          height: 30px;
-          color: var(--gray-color);
-        }
+      
+        svg {
+        width: 30px;
+        height: 30px;
+        color: var(--lightGray-color);
       }
   
       &:hover {
-        a {
           svg {
             color: var(--white-color);
           }
-        }
       }
   
       @media screen and (min-width: 2000px) {

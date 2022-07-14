@@ -72,12 +72,12 @@ const Projects = () => {
                             <Carousel showThumbs={false}>
                                 {project.img.map((image, i) => (
                                     <div className="carousel_img" key={project.name+i}>
-                                        <img src={image} />
+                                        <img src={image}  alt={i}/>
                                     </div>
                                 ))}
                             </Carousel>
                             <motion.div
-                                whileHover={{opacity: [0.5, 1]}}
+                                whileHover={{opacity: [0, 1]}}
                                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                                 className="app__work-hover app__flex"
                               >
@@ -88,9 +88,7 @@ const Projects = () => {
                                         transition={{duration: 0.15}}
                                         className="app__flex"
                                     >
-                                        <a href="https://www.google.com" target="_blank">
                                             <AiFillEye />
-                                        </a>
                                     </motion.div>
                                 </a>
                                 <a href={project.codeLink} target="_blank" rel="noreferrer">
@@ -100,9 +98,7 @@ const Projects = () => {
                                         transition={{duration: 0.15}}
                                         className="app__flex"
                                     >
-                                        <a href="https://www.google.com" target="_blank">
                                             <AiFillGithub />
-                                        </a>
                                     </motion.div>
                                 </a>
                             </motion.div>

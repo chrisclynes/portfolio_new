@@ -95,21 +95,21 @@ const Contact = () => {
                 </div>
             }
             <div className="app__social-items app__flex">
-                <div>
-                    <a href="https://www.google.com" target="_blank">
+                <a href="https://github.com/ChrisClynes" target="_blank" rel="noreferrer">
+                    <div>
                         <BsGithub />
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.google.com" target="_blank">
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/chris-clynes-717128127/" target="_blank" rel="noreferrer">
+                    <div>
                         <BsLinkedin />
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.google.com" target="_blank">
+                    </div>
+                </a>
+                <a href="https://codepen.io/christoph09" target="_blank" rel="noreferrer">
+                    <div>
                         <SiCodepen />
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </>
     )
