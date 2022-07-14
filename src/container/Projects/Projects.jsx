@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { AppWrapper, MotionWrap } from '../../wrapper';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
+import { Carousel } from 'react-responsive-carousel'; 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import './Projects.scss';
 import { images } from '../../constants';
 
@@ -14,11 +17,11 @@ const Projects = () => {
     const [filteredData, setFilteredData] = useState();
     //PROJECTS
     const projectsArr = [
-        {name: "Guitar Toolbox", description: "React JS app for guitar training", link: "", codeLink: "", img: about01, tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
-        {name: "Web Dex", description: "Google clone app", link: "", codeLink: "", img: about02, tags: ["API", "React JS", "Mobile"] },
-        {name: "Notes", description: "JS notes appication", link: "", codeLink: "", img: about03, tags: ["React JS"] },
-        {name: "Restaurant Site", description: "React UI/UX site", link: "", codeLink: "", img: about01, tags: ["UI/UX", "Mobile", "React JS"] },
-        {name: "Weather API", description: "Weather application", link: "", codeLink: "", img: about02, tags: ["API"] },
+        {name: "Guitar Toolbox", description: "React JS app for guitar training", link: "", codeLink: "", img: [about01, about02, about03], tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
+        {name: "Web Dex", description: "Google clone app", link: "", codeLink: "", img: [about02], tags: ["API", "React JS", "Mobile"] },
+        {name: "Notes", description: "JS notes appication", link: "", codeLink: "", img: [about03], tags: ["React JS"] },
+        {name: "Restaurant Site", description: "React UI/UX site", link: "", codeLink: "", img: [about01], tags: ["UI/UX", "Mobile", "React JS"] },
+        {name: "Weather API", description: "Weather application", link: "", codeLink: "", img: [about02], tags: ["API"] },
     ];
 
     useEffect(() => {
@@ -66,30 +69,40 @@ const Projects = () => {
                 {filteredData?.map((project, i) => (
                     <div className="app__work-item app__flex" key={project.name}>
                         <div className="app__work-img app__flex">
-                            <img src={project.img} alt={project.name} />
+                            <Carousel showThumbs={false}>
+                                {project.img.map((image, i) => (
+                                    <div className="carousel_img" key={project.name+i}>
+                                        <img src={image} />
+                                    </div>
+                                ))}
+                            </Carousel>
                             <motion.div
-                                whileHover={{opacity: [0, 1]}}
+                                whileHover={{opacity: [0.5, 1]}}
                                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                                 className="app__work-hover app__flex"
                               >
                                 <a href={project.link} target="_blank" rel="noreferrer">
                                     <motion.div
-                                        whileInView={{scale: [0, 1]}}
+                                        whileInView={{scale: [0.5, 1]}}
                                         whileHover={{scale: [1, 0.9]}}
-                                        transition={{duration: 0.25}}
+                                        transition={{duration: 0.15}}
                                         className="app__flex"
                                     >
-                                        <AiFillEye />
+                                        <a href="https://www.google.com" target="_blank">
+                                            <AiFillEye />
+                                        </a>
                                     </motion.div>
                                 </a>
                                 <a href={project.codeLink} target="_blank" rel="noreferrer">
                                     <motion.div
-                                        whileInView={{scale: [0, 1]}}
+                                        whileInView={{scale: [0.5, 1]}}
                                         whileHover={{scale: [1, 0.9]}}
-                                        transition={{duration: 0.25}}
+                                        transition={{duration: 0.15}}
                                         className="app__flex"
                                     >
-                                        <AiFillGithub />
+                                        <a href="https://www.google.com" target="_blank">
+                                            <AiFillGithub />
+                                        </a>
                                     </motion.div>
                                 </a>
                             </motion.div>

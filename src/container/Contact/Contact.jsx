@@ -96,13 +96,19 @@ const Contact = () => {
             }
             <div className="app__social-items app__flex">
                 <div>
-                    <BsGithub />
+                    <a href="https://www.google.com" target="_blank">
+                        <BsGithub />
+                    </a>
                 </div>
                 <div>
-                    <BsLinkedin />
+                    <a href="https://www.google.com" target="_blank">
+                        <BsLinkedin />
+                    </a>
                 </div>
                 <div>
-                    <SiCodepen />
+                    <a href="https://www.google.com" target="_blank">
+                        <SiCodepen />
+                    </a>
                 </div>
             </div>
         </>
