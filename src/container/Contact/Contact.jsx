@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { AppWrapper, MotionWrap } from '../../wrapper';
 import { FiPhone, FiMail } from 'react-icons/fi'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
+import { SiCodepen } from 'react-icons/si'
 
 import './Contact.scss';
 
@@ -92,6 +94,17 @@ const Contact = () => {
                     <h4 className="head-text2">Thank you!</h4>
                 </div>
             }
+            <div className="app__social-items app__flex">
+                <div>
+                    <BsGithub />
+                </div>
+                <div>
+                    <BsLinkedin />
+                </div>
+                <div>
+                    <SiCodepen />
+                </div>
+            </div>
         </>
     )
 }

@@ -151,31 +151,31 @@
   
   .app__social {
     position: fixed;
-    top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1rem;
+    border-top: 1px solid var(--lightGray-color);
+    border-right: 1px solid var(--lightGray-color);
     z-index: 10;
+    background-color: aqua;
   
     div {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 50px;
+      height: 50px;
       background-color: var(--white-color);
-      margin: 0.25rem 0;
-      border: 1px solid var(--lightGray-color);
+      margin: 0;
+      border-bottom: 1px solid var(--lightGray-color);
       display: flex;
       justify-content: center;
       align-items: center;
       transition: all 0.3s ease-in-out;
   
       svg {
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         color: var(--gray-color);
       }
   
@@ -189,9 +189,8 @@
       }
   
       @media screen and (min-width: 2000px) {
-        width: 70px;
-        height: 70px;
-        margin: 0.5rem 0;
+        width: 60px;
+        height: 60px;
   
         svg {
           width: 30px;

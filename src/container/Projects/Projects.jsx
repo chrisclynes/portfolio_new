@@ -48,9 +48,9 @@ const Projects = () => {
                 {['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'].map((item, i) => (
                     <motion.div 
                     key={i}
-                    initial={{y: -30, opacity: 0}}
-                    animate={{y: 0, opacity: 1}}
-                    transition={{ duration: 0.5 + (i/9) }}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{ duration: 0.5 }}
                     onClick={() => handleFilter(item)}
                     className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
                     > 
@@ -65,9 +65,6 @@ const Projects = () => {
             >
                 {filteredData?.map((project, i) => (
                     <div className="app__work-item app__flex" key={project.name}>
-                        <div className="app__work-title app__flex">
-                            <h4 className="bold-text">{project.name}</h4>
-                        </div>
                         <div className="app__work-img app__flex">
                             <img src={project.img} alt={project.name} />
                             <motion.div
@@ -96,6 +93,9 @@ const Projects = () => {
                                     </motion.div>
                                 </a>
                             </motion.div>
+                        </div>
+                        <div className="app__work-title app__flex">
+                            <h4 className="bold-text">{project.name}</h4>
                         </div>
                         <div className="app__work-content app__flex">
                             <p className="p-text" style={{marginTop: 10}}>{project.description}</p>

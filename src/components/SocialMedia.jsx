@@ -1,5 +1,5 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { AiOutlineCodepenCircle } from 'react-icons/ai'
+import { SiCodepen } from 'react-icons/si'
 
 
 const SocialMedia = () => {
@@ -12,7 +12,7 @@ const SocialMedia = () => {
                 <BsLinkedin />
             </div>
             <div>
-                <AiOutlineCodepenCircle />
+                <SiCodepen />
             </div>
         </div>
     )
