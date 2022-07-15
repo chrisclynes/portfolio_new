@@ -5,7 +5,7 @@ import { SiCodepen } from 'react-icons/si'
 const SocialMedia = () => {
     return (
         <div className="app__social">
-            <a href="https://github.com/ChrisClynes" target="_blank" rel="noreferrer">
+            <a href="https://github.com/chrisclynes" target="_blank" rel="noreferrer">
                 <div>
                     <BsGithub />
                 </div>

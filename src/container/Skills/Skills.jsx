@@ -28,22 +28,7 @@ const Skills = () => {
         <>
             <h2 className="head-text">Experience</h2>
             <div className="app__skills-container">
-                <motion.div className="app__skills-list">
-                    {skillsArr.map((skill, i) => (
-                        <motion.div
-                            whileInView={{opacity: [0,1]}}
-                            transition={{duration: 0.5}}
-                            className="app__skills-item app__flex"
-                            key={skill.name}
-                        >
-                            <div className="app__flex">
-                                <img src={skill.icon} alt={`icon${i}`} />
-                            </div>
-                            <p className="p-text">{skill.name}</p>
-                        </motion.div>    
-                    ))}
-                </motion.div>
-                <motion.div className="app__skills-exp">
+            <motion.div className="app__skills-exp-works">
                     {experienceArr.map((work, i) => (
                         <>
                             <motion.div
@@ -59,6 +44,21 @@ const Skills = () => {
                                 <span>{work.description}</span>
                             </motion.div>
                         </>
+                    ))}
+                </motion.div>
+                <motion.div className="app__skills-list">
+                    {skillsArr.map((skill, i) => (
+                        <motion.div
+                            whileInView={{opacity: [0,1]}}
+                            transition={{duration: 0.5}}
+                            className="app__skills-item app__flex"
+                            key={skill.name}
+                        >
+                            <div className="app__flex">
+                                <img src={skill.icon} alt={`icon${i}`} />
+                            </div>
+                            <p className="p-text">{skill.name}</p>
+                        </motion.div>    
                     ))}
                 </motion.div>
             </div>

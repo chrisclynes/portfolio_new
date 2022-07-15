@@ -7,7 +7,12 @@
   }
   
   .app__whitebg {
-    background-color: var(--white-color);
+    background-image: url("./images/whitebkg.jpg");
+    
+    object-fit: cover;
+    background-attachment: fixed;
+    
+    // background-color: var(--white-color);
   }
   
   .app__primarybg {

@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import './Projects.scss';
 import { images } from '../../constants';
 
-const { about01, about02, about03 } = images;
+const { about01, about02, about03, gt01, gt02, gt03, gt04 } = images;
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('All');
@@ -17,11 +17,11 @@ const Projects = () => {
     const [filteredData, setFilteredData] = useState();
     //PROJECTS
     const projectsArr = [
-        {name: "Guitar Toolbox", description: "React JS app for guitar training", link: "", codeLink: "", img: [about01, about02, about03], tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
-        {name: "Web Dex", description: "Google clone app", link: "", codeLink: "", img: [about02], tags: ["API", "React JS", "Mobile"] },
-        {name: "Notes", description: "JS notes appication", link: "", codeLink: "", img: [about03], tags: ["React JS"] },
-        {name: "Restaurant Site", description: "React UI/UX site", link: "", codeLink: "", img: [about01], tags: ["UI/UX", "Mobile", "React JS"] },
-        {name: "Weather API", description: "Weather application", link: "", codeLink: "", img: [about02], tags: ["API"] },
+        {name: "Guitar Toolbox", description: "React app for guitar training", link: "https://guitartoolbox-prod.web.app/", codeLink: "https://github.com/ChrisClynes/guitar-toolbox", img: [gt01, gt02, gt03, gt04], tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
+        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [about02], tags: ["API", "React JS", "Mobile"] },
+        {name: "Notes", description: "JS notes appication", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [about03], tags: ["React JS"] },
+        {name: "Restaurant Site", description: "React UI/UX site", link: "https://github.com/chrisclynes/restuarant-website", codeLink: "https://github.com/chrisclynes/restuarant-website", img: [about01], tags: ["UI/UX", "Mobile", "React JS"] },
+        {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [about02], tags: ["API"] },
     ];
 
     useEffect(() => {

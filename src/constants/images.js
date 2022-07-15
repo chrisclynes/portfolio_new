@@ -11,7 +11,13 @@ import about01 from '../images/about01.jpg';
 import about02 from '../images/about02.jpg';
 import about03 from '../images/about03.jpg';
 import about04 from '../images/about04.jpg';
+import gt01 from '../images/guitartoolbox01.JPG';
+import gt02 from '../images/guitartoolbox02.JPG';
+import gt03 from '../images/guitartoolbox03.JPG';
+import gt04 from '../images/guitartoolbox04.JPG';
+
 import logo from '../images/logo.png';
+import whitebkg from '../images/whitebkg.jpg';
 
 export default {
   api,
@@ -27,5 +33,10 @@ export default {
   about02,
   about03,
   about04,
+  gt01,
+  gt02,
+  gt03,
+  gt04,
   logo,
+  whitebkg
 };

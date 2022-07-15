@@ -95,7 +95,7 @@ const Contact = () => {
                 </div>
             }
             <div className="app__social-items app__flex">
-                <a href="https://github.com/ChrisClynes" target="_blank" rel="noreferrer">
+                <a href="https://github.com/chrisclynes" target="_blank" rel="noreferrer">
                     <div>
                         <BsGithub />
                     </div>
