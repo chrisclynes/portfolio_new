@@ -15,6 +15,12 @@ import gt01 from '../images/guitartoolbox01.JPG';
 import gt02 from '../images/guitartoolbox02.JPG';
 import gt03 from '../images/guitartoolbox03.JPG';
 import gt04 from '../images/guitartoolbox04.JPG';
+import notes01 from '../images/notes01.JPG';
+import notes02 from '../images/notes02.JPG';
+import webdex01 from '../images/webdex01.JPG';
+import webdex02 from '../images/webdex02.JPG';
+import webdex03 from '../images/webdex03.JPG';
+import weather01 from '../images/weather01.JPG';
 
 import logo from '../images/logo.png';
 import whitebkg from '../images/whitebkg.jpg';
@@ -38,5 +44,11 @@ export default {
   gt03,
   gt04,
   logo,
-  whitebkg
+  whitebkg,
+  notes01,
+  notes02,
+  webdex01,
+  webdex02,
+  webdex03,
+  weather01,
 };
