@@ -8,7 +8,7 @@ import { images } from '../../constants';
 
 const { about01, about02, about03, about04 } = images;
 const aboutArr = [
-    {title: 'Web Development', description: 'I design fantastic front-end websites', img: about01},
+    {title: 'Web Design', description: 'I design fantastic front-end websites', img: about01},
     {title: 'React Applications', description: 'Creating web applications with speed', img: about02},
     {title: 'UX/UI', description: 'User experiences that are engaging', img: about03},
     {title: 'Problem Solver', description: 'Providing solutions to technical problems', img: about04},

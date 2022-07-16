@@ -18,28 +18,17 @@
   justify-content: flex-start;
   align-items: center;
 
-  img {
-    width: 138px;
-
-    @media screen and (min-width: 2000px) {
-      width: 180px;
-      height: 40px;
-    }
-  }
 }
 
 .app__navbar-links {
   flex: 1;
   display: flex;
   justify-content: end;
-
-
   list-style: none;
 
   li {
     margin: 0 1rem;
     cursor: pointer;
-
     flex-direction: column;
 
     a {
@@ -48,16 +37,11 @@
       flex-direction: column;
       text-transform: uppercase;
       font-weight: 500;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.1s ease-in-out;
 
       &:hover {
         color: var(--primary-color);
       }
-    }
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
     }
   }
 

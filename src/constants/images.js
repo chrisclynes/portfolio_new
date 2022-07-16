@@ -21,6 +21,9 @@ import webdex01 from '../images/webdex01.JPG';
 import webdex02 from '../images/webdex02.JPG';
 import webdex03 from '../images/webdex03.JPG';
 import weather01 from '../images/weather01.JPG';
+import rest01 from '../images/rest01.JPG';
+import rest02 from '../images/rest02.JPG';
+import rest03 from '../images/rest03.JPG';
 
 import logo from '../images/logo.png';
 import whitebkg from '../images/whitebkg.jpg';
@@ -51,4 +54,7 @@ export default {
   webdex02,
   webdex03,
   weather01,
+  rest01,
+  rest02,
+  rest03,
 };

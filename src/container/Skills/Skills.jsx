@@ -21,7 +21,8 @@ const Skills = () => {
     ];
     //add to experiences
     const experienceArr = [
-        {name: "IT Technician", company: "UPS", description: "Technical support for computer systems and network infrastructure" },
+        { name: "IT Technician", company: "UPS", description: "8+ years of technical support for computer systems and network infrastructure in a modern corporate environment" },
+        { name: "Web Development", description: "8+ years of technical support for computer systems and network infrastructure" },
     ]
     
     return (
@@ -50,7 +51,7 @@ const Skills = () => {
                     {skillsArr.map((skill, i) => (
                         <motion.div
                             whileInView={{opacity: [0,1]}}
-                            transition={{duration: 0.5}}
+                            transition={{duration: 0.5 + i/10}}
                             className="app__skills-item app__flex"
                             key={skill.name}
                         >
