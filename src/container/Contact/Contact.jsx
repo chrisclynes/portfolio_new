@@ -51,8 +51,7 @@ const Contact = () => {
                 </div>
             </div>
             {!submitted ?
-                <div className="app__footer-form app__flex">
-                
+                <form className="app__footer-form app__flex" action="https://formsubmit.co/chrisclynesdev@gmail.com" method="POST">
                     <div className="app__flex">
                         <input 
                             name="name" 
@@ -81,14 +80,14 @@ const Contact = () => {
                         />
                     </div>
                     <button 
-                        type="button"
+                        type="submit"
                         className="p-text"
                         onClick={handleSubmit}
                         disabled={isLoading ? true : false} 
                     >
                         {isLoading ? "Sending" : "Send"} 
                     </button>
-                </div>
+                </form>
                 :
                 <div className="app__footer-form app__flex">
                     <h4 className="head-text2">Thank you!</h4>
