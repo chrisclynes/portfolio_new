@@ -30,7 +30,6 @@ const Contact = () => {
             message: message
         }
 
-
         setIsLoading(false);
         setSubmitted(true);
     }
@@ -93,22 +92,25 @@ const Contact = () => {
                     <h4 className="head-text2">Thank you!</h4>
                 </div>
             }
-            <div className="app__social-items app__flex">
-                <a href="https://github.com/chrisclynes" target="_blank" rel="noreferrer">
-                    <div>
-                        <BsGithub />
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/chris-clynes-717128127/" target="_blank" rel="noreferrer">
-                    <div>
-                        <BsLinkedin />
-                    </div>
-                </a>
-                <a href="https://codepen.io/christoph09" target="_blank" rel="noreferrer">
-                    <div>
-                        <SiCodepen />
-                    </div>
-                </a>
+            <div className="app__footer-container app__flex">
+                <div className="app__social-items app__flex">
+                    <a href="https://github.com/chrisclynes" target="_blank" rel="noreferrer">
+                        <div>
+                            <BsGithub />
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chris-clynes-717128127/" target="_blank" rel="noreferrer">
+                        <div>
+                            <BsLinkedin />
+                        </div>
+                    </a>
+                    <a href="https://codepen.io/christoph09" target="_blank" rel="noreferrer">
+                        <div>
+                            <SiCodepen />
+                        </div>
+                    </a>
+                </div>
+                <div className="app__copyright p-text">2022 Chris Clynes</div>
             </div>
         </>
     )

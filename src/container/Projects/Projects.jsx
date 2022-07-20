@@ -24,6 +24,8 @@ const Projects = () => {
         {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
     ];
 
+    const optionsFilter = ['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'];
+
     useEffect(() => {
         setFilteredData(projectsArr)
     }, [])
@@ -48,7 +50,7 @@ const Projects = () => {
                     <span>My Projects</span>
             </h2>
             <div className="app__work-filter">
-                {['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'].map((item, i) => (
+                {optionsFilter.map((item, i) => (
                     <motion.div 
                     key={i}
                     initial={{opacity: 0}}

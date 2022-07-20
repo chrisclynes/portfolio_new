@@ -49,8 +49,8 @@ const Skills = () => {
                 <motion.div className="app__skills-list">
                     {skillsArr.map((skill, i) => (
                         <motion.div
-                            whileInView={{opacity: [0,1]}}
-                            transition={{duration: 0.5 + i/10}}
+                            whileInView={{scale: [0,1]}}
+                            transition={{duration: 0.25 + i/10}}
                             className="app__skills-item app__flex"
                             key={skill.name}
                         >
