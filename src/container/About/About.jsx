@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { AppWrapper, MotionWrap } from '../../wrapper'
 import { motion } from 'framer-motion';
 

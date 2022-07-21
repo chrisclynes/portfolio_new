@@ -24,7 +24,6 @@ import weather01 from '../images/weather01.JPG';
 import rest01 from '../images/rest01.JPG';
 import rest02 from '../images/rest02.JPG';
 import rest03 from '../images/rest03.JPG';
-
 import logo from '../images/logo.png';
 import whitebkg from '../images/whitebkg.jpg';
 

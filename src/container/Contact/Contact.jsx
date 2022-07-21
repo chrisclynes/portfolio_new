@@ -10,7 +10,8 @@ import './Contact.scss';
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
-    const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+    const [contactForm, setContactForm] = useState({ name: '', message: '', email: '' });
+    const [validCheck, setValidCheck] = useState('')
     const [error, setError] =useState(false);
     const [isLoading, setIsLoading] = useState(false);
     
@@ -24,23 +25,39 @@ const Contact = () => {
         })
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async () => { 
         setIsLoading(true);
-        try {
-            const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm)
-                .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                }, function(error) {
-                console.log('FAILED...', error);
-                });
-            console.log(response)
+        if(contactForm.name === ""){
+            setValidCheck("please input a name");
+            setIsLoading(false);
+            return
+        } 
+        if(!contactForm.email.match(/@/g)){
+            setValidCheck("please input a valid email");
+            setIsLoading(false)
+            return
         }
-        catch {
-            setError(true);
-        }  
+         await emailjs.send("service_hwuwjfn","template_rhondho", contactForm, "DXBBjxaYyLdSdfbGS")
+            .then(function() {
+                setIsLoading(false);
+                setValidCheck('');
+                setSubmitted(true);
+                setContactForm({ name: '', message: '', email: '' })
+            }, function(error) {
+                if(error) {
+                setError(true);
+                setValidCheck('');
+                setIsLoading(false);
+                setSubmitted(true);
+                return console.log('FAILED...', error);
+                }
+            });
+    }
+
+    const handleReset = () => {
         setIsLoading(false);
         setError(false);
-        setSubmitted(true); 
+        setSubmitted(false); 
     }
 
     const { name, email, message } = contactForm;
@@ -89,6 +106,9 @@ const Contact = () => {
                             onChange={handleInput} 
                         />
                     </div>
+                    {validCheck && 
+                        <span className='p-text' style={{color: "red"}}>{validCheck}</span>
+                    }
                     <button 
                         type="button"
                         className="p-text"
@@ -97,10 +117,21 @@ const Contact = () => {
                     >
                         {isLoading ? "Sending" : "Send"} 
                     </button>
+                    
                 </form>
                 :
                 <div className="app__footer-form app__flex" style={error ? {backgroundColor: "tomato"}: null}>
                     <h4 className="head-text2">{!error ? "Thank you!" : "Failed to send message"}</h4>
+                    {error &&
+                        <button 
+                        type="button"
+                        className="p-text"
+                        style={{backgroundColor: "#fef4f5", color: "var(--gray-color)"}}
+                        onClick={handleReset}
+                    >
+                        Retry 
+                    </button>
+                    }
                 </div>
             }
             <div className="app__footer-container app__flex">
