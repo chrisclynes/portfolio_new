@@ -27,20 +27,20 @@ const Contact = () => {
 
     const handleSubmit = async () => { 
         setIsLoading(true);
+        setValidCheck('');
         if(contactForm.name === ""){
-            setValidCheck("please input a name");
+            setValidCheck("please input a name!");
             setIsLoading(false);
             return
         } 
         if(!contactForm.email.match(/@/g)){
-            setValidCheck("please input a valid email");
-            setIsLoading(false)
+            setValidCheck("please input a valid email!");
+            setIsLoading(false);
             return
         }
          await emailjs.send("service_hwuwjfn","template_rhondho", contactForm, "DXBBjxaYyLdSdfbGS")
             .then(function() {
                 setIsLoading(false);
-                setValidCheck('');
                 setSubmitted(true);
                 setContactForm({ name: '', message: '', email: '' })
             }, function(error) {
@@ -75,58 +75,60 @@ const Contact = () => {
                     <a href="tel: (636) 385-0180" className="p-text">(636) 385-0180</a>
                 </div>
             </div>
+            {validCheck && 
+                <div className="app__contatact-validation" style={{width: "auto", backgroundColor: "red"}}>
+                    <span className='p-text' style={{color: "white"}}>{validCheck}</span>
+                </div>
+            }
             {!submitted ?
-                <form className="app__footer-form app__flex">
-                    <div className="app__flex">
-                        <input 
-                            name="name" 
-                            type="text" 
-                            placeholder="Enter your name" 
-                            value={name} 
-                            required
-                            onChange={handleInput} 
-                        />
-                    </div>
-                    <div className="app__flex">
-                        <input 
-                            name="email" 
-                            type="email" 
-                            placeholder="Enter your email" 
-                            value={email} 
-                            required
-                            onChange={handleInput} 
-                        />
-                    </div>
-                    <div className="app__flex">
-                        <textarea 
-                            name="message"
-                            className="p-text" 
-                            placeholder="Send me a message" 
-                            value={message} 
-                            onChange={handleInput} 
-                        />
-                    </div>
-                    {validCheck && 
-                        <span className='p-text' style={{color: "red"}}>{validCheck}</span>
-                    }
-                    <button 
-                        type="button"
-                        className="p-text"
-                        onClick={handleSubmit}
-                        disabled={isLoading ? true : false} 
-                    >
-                        {isLoading ? "Sending" : "Send"} 
-                    </button>
-                    
-                </form>
+                <div className="app__footer-form app__flex">
+                    <form >
+                        <div className="app__flex">
+                            <input 
+                                name="name" 
+                                type="text" 
+                                placeholder="Enter your name" 
+                                value={name} 
+                                required
+                                onChange={handleInput} 
+                            />
+                        </div>
+                        <div className="app__flex">
+                            <input 
+                                name="email" 
+                                type="email" 
+                                placeholder="Enter your email" 
+                                value={email} 
+                                required
+                                onChange={handleInput} 
+                            />
+                        </div>
+                        <div className="app__flex">
+                            <textarea 
+                                name="message"
+                                className="p-text" 
+                                placeholder="Send me a message" 
+                                value={message} 
+                                onChange={handleInput} 
+                            />
+                        </div>
+                    </form>
+                        <button 
+                            type="button"
+                            className="p-text"
+                            onClick={handleSubmit}
+                            disabled={isLoading ? true : false} 
+                        >
+                            {isLoading ? "Sending" : "Send"} 
+                        </button>
+                </div>
                 :
-                <div className="app__footer-form app__flex" style={error ? {backgroundColor: "tomato"}: null}>
+                <div className="app__form-submitted app__flex" style={error ? {backgroundColor: "tomato"}: null}>
                     <h4 className="head-text2">{!error ? "Thank you!" : "Failed to send message"}</h4>
                     {error &&
                         <button 
                         type="button"
                         className="p-text"
-                        style={{backgroundColor: "#fef4f5", color: "var(--gray-color)"}}
                         onClick={handleReset}
                     >
                         Retry 
