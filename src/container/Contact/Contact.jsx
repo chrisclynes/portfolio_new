@@ -4,11 +4,14 @@ import { FiPhone, FiMail } from 'react-icons/fi'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { SiCodepen } from 'react-icons/si'
 
+import emailjs from 'emailjs-com';
+
 import './Contact.scss';
 
 const Contact = () => {
-    const [submitted, setSubmitted] = useState(false)
+    const [submitted, setSubmitted] = useState(false);
     const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+    const [error, setError] =useState(false);
     const [isLoading, setIsLoading] = useState(false);
     
 
@@ -21,17 +24,23 @@ const Contact = () => {
         })
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setIsLoading(true);
-        const contact = {
-            _type: 'contact',
-            name: name,
-            email: email,
-            message: message
+        try {
+            const response = await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm)
+                .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                console.log('FAILED...', error);
+                });
+            console.log(response)
         }
-
+        catch {
+            setError(true);
+        }  
         setIsLoading(false);
-        setSubmitted(true);
+        setError(false);
+        setSubmitted(true); 
     }
 
     const { name, email, message } = contactForm;
@@ -50,13 +59,14 @@ const Contact = () => {
                 </div>
             </div>
             {!submitted ?
-                <form className="app__footer-form app__flex" action="https://formsubmit.co/chrisclynesdev@gmail.com" method="POST">
+                <form className="app__footer-form app__flex">
                     <div className="app__flex">
                         <input 
                             name="name" 
                             type="text" 
                             placeholder="Enter your name" 
                             value={name} 
+                            required
                             onChange={handleInput} 
                         />
                     </div>
@@ -66,6 +76,7 @@ const Contact = () => {
                             type="email" 
                             placeholder="Enter your email" 
                             value={email} 
+                            required
                             onChange={handleInput} 
                         />
                     </div>
@@ -79,7 +90,7 @@ const Contact = () => {
                         />
                     </div>
                     <button 
-                        type="submit"
+                        type="button"
                         className="p-text"
                         onClick={handleSubmit}
                         disabled={isLoading ? true : false} 
@@ -88,8 +99,8 @@ const Contact = () => {
                     </button>
                 </form>
                 :
-                <div className="app__footer-form app__flex">
-                    <h4 className="head-text2">Thank you!</h4>
+                <div className="app__footer-form app__flex" style={error ? {backgroundColor: "tomato"}: null}>
+                    <h4 className="head-text2">{!error ? "Thank you!" : "Failed to send message"}</h4>
                 </div>
             }
             <div className="app__footer-container app__flex">
