@@ -5,18 +5,18 @@ import { images } from '../../constants';
 import './Skills.scss';
 
 const Skills = () => {
-    const {sass, react, figma, api, git, html, javascript, css} = images
+    const {sass, react, figma, api, git, html, javascript, css, firebase} = images;
     
     //add to skills
     const skillsArr = [
         {name: "JavaScript", icon: javascript },
         {name: "React JS", icon: react },
         {name: "SASS", icon: sass },
-        {name: "Figma", icon: figma },
         {name: "API", icon: api, href: "https://icons8.com/icon/kM1Cl69rI7go/api" },
         {name: "Git", icon: git },
         {name: "HTML 5", icon: html },
         {name: "CSS", icon: css },
+        {name: "Firebase", icon: firebase, href: "https://icons8.com/icon/62452/firebase" },
     ];
     //add to experiences
     const experienceArr = [

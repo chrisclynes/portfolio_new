@@ -1,7 +1,10 @@
 import { AppWrapper } from '../../wrapper'
 import { motion } from 'framer-motion';
 
+import { images } from '../../constants';
+
 import './Header.scss';
+const { deskImg } = images;
 
 const Header = () => {
     return (
@@ -16,13 +19,23 @@ const Header = () => {
                 <motion.div
                     initial={{ x: -100, opacity: 0}}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ type: 'spring', delay: 1, duration: 1, bounce: 0.5 }}
+                    transition={{ type: 'spring', delay: 2, duration: 2, bounce: 0.5 }}
                     className="app__header-info"
                 >
                     <div className="sub-tag app__flex">
                         <p className="logo-text" >A Web Developer</p>
                     </div>
                 </motion.div>
+                <div className="app__header-img-container">
+                    <motion.div
+                        initial={{ x: -100, opacity: 0}}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ type: 'spring', delay: 1, duration: 1, bounce: 0.5 }}
+                        className="app__header-info"
+                    >
+                        <img src={deskImg} alt="computer desk" />
+                    </motion.div>
+                </div>
             </div>
             <motion.div
                     initial={{ x: 30, opacity: 0}}

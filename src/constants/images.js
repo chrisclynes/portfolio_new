@@ -5,6 +5,7 @@ import git from '../images/git.png';
 import html from '../images/html.png';
 import javascript from '../images/javascript.png';
 import node from '../images/node.png';
+import firebase from '../images/firebase.png';
 import react from '../images/react.png';
 import sass from '../images/sass.png';
 import about01 from '../images/about01.jpg';
@@ -26,6 +27,8 @@ import rest02 from '../images/rest02.JPG';
 import rest03 from '../images/rest03.JPG';
 import logo from '../images/logo.png';
 import whitebkg from '../images/whitebkg.jpg';
+import deskImg from '../images/desk_img.svg';
+
 
 export default {
   api,
@@ -35,6 +38,7 @@ export default {
   html,
   javascript,
   node,
+  firebase,
   react,
   sass,
   about01,
@@ -56,4 +60,5 @@ export default {
   rest01,
   rest02,
   rest03,
+  deskImg,
 };

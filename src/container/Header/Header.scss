@@ -7,6 +7,8 @@
   }
   
   .app__header {
+    position: absolute;
+    top: -10%;
     width: 100%;
     height: 100%; 
     background: transparent;
@@ -21,20 +23,37 @@
   }
   
   .app__header-badge {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    z-index: 2;
   
     .app__title,
     .sub-tag {
       width: 100%;
     }
+
+    .app__header-img-container {
+      position: absolute;
+      left: 49%;
+      bottom: -323%;
+      transform: translateX(-66%);
+      z-index: -1;
+  
+      img {
+        width: 1000px;
+      }
+      @media screen and (max-width: 450px) {
+       display: none;
+      }
+    }
   
     .sub-tag {
-      margin-top: 2rem;
+      margin-top: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
