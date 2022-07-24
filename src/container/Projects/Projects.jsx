@@ -17,17 +17,17 @@ const Projects = () => {
     const [filteredData, setFilteredData] = useState();
     //PROJECTS
     const projectsArr = [
-        {name: "Guitar Toolbox", description: "React app for guitar training", link: "https://guitartoolbox-prod.web.app/", codeLink: "https://github.com/ChrisClynes/guitar-toolbox", img: [gt01, gt02, gt03, gt04], tags: ["UI/UX", "Mobile", "React JS", "Full-stack", "API"] },
-        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS", "Mobile"] },
+        {name: "Guitar Toolbox", description: "React app for guitar training", link: "https://guitartoolbox-prod.web.app/", codeLink: "https://github.com/ChrisClynes/guitar-toolbox", img: [gt01, gt02, gt03, gt04], tags: ["UI/UX", "React JS", "Full-stack", "API"] },
         {name: "Notes", description: "React notes appication", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
-        {name: "Restaurant Site", description: "React UI/UX site", link: "https://github.com/chrisclynes/restuarant-website", codeLink: "https://github.com/chrisclynes/restuarant-website", img: [rest01, rest02, rest03], tags: ["UI/UX", "Mobile", "React JS"] },
         {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
+        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
     ];
 
-    const optionsFilter = ['UI/UX', 'API', 'Mobile', 'React JS', 'Full-stack', 'All'];
+    const optionsFilter = ['UI/UX', 'API', 'React JS', 'Full-stack', 'All'];
 
     useEffect(() => {
         setFilteredData(projectsArr)
+        
     }, [])
 
     const handleFilter = (item) => {
