@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import './Projects.scss';
 import { images } from '../../constants';
 
-const { gt01, gt02, gt03, gt04, notes01, notes02, webdex01, webdex02, webdex03, weather01, rest01, rest02, rest03 } = images;
+const { gt01, gt02, gt03, gt04, notes01, notes02, webdex01, webdex02, webdex03, weather01 } = images;
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('All');

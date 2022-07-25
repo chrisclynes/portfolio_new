@@ -29,7 +29,7 @@ const Navbar = () => {
                 {toggleMenu && (
                 // container for mobile nav menu
                    <motion.div
-                        whileInView={{ x: [300, 0] }}
+                        animate={{ x: [300, 0] }}
                         transition={{ duration: 0.35, ease: 'easeInOut' }}
                    >
                      <MdOutlineClose onClick={() => setToggleMenu(false)}/>
