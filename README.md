@@ -1,6 +1,6 @@
-# Chris CLynes Portfolio
+# Chris Clynes Portfolio
 
-This project is hosted on (https://chrisclynes.com).
+This project is hosted @ (https://chrisclynes.com).
 
 ### To start dev server :
 ### `npm start`
