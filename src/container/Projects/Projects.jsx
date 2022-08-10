@@ -18,7 +18,7 @@ const Projects = () => {
     //PROJECTS
     const projectsArr = [
         {name: "Guitar Toolbox", description: "React app for guitar training", link: "https://guitartoolbox-prod.web.app/", codeLink: "https://github.com/ChrisClynes/guitar-toolbox", img: [gt01, gt02, gt03, gt04], tags: ["UI/UX", "React JS", "Full-stack", "API"] },
-        {name: "Notes", description: "React notes appication", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
+        {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
         {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
         {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
     ];

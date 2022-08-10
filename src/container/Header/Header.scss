@@ -42,8 +42,10 @@
 
     p {
       background-color: var(--lightGray-color);
-      border-radius: 10px;
+      border-radius: 10%/50%;
       padding: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       width: 100%;
 
       @media screen and (min-width: 2000px) {
