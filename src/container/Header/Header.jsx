@@ -4,6 +4,16 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 import './Header.scss';
 
+const arrowVariants = {
+    hover: {
+        scale: 1.2,
+        transition: {
+            duration: 0.3,
+            yoyo: Infinity
+        }
+    }
+}
+
 const Header = () => {
     return (
         <div className="app__header app__flex">
@@ -26,13 +36,17 @@ const Header = () => {
                 </motion.div>
             </div>
             <motion.div
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 0.5 }}
-                    className="down-arrow-container"
+                    animate={{ y: 50, opacity: [0, 1] }}
+                    transition={{ delay: 2.2, duration: 1 }}
+                    className="down-arrow-container app__flex"
                 >
-                    <div className="app__flex">
+                    <motion.button 
+                        className="app__flex"
+                        variants={arrowVariants}
+                        whileHover="hover"
+                    >
                         <a href="#about" className="down-arrow"><IoIosArrowDown /></a>
-                    </div>
+                    </motion.button>
             </motion.div>
             <motion.div
                     initial={{ x: 30, opacity: 0}}
