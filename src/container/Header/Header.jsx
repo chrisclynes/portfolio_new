@@ -36,8 +36,8 @@ const Header = () => {
                 </motion.div>
             </div>
             <motion.div
-                    animate={{ y: 50, opacity: [0, 1] }}
-                    transition={{ delay: 2.2, duration: 1 }}
+                    animate={{ y: 100, opacity: [0, 1] }}
+                    transition={{ type: 'spring', delay: 2.2, duration: 1, bounce: 0.5}}
                     className="down-arrow-container app__flex"
                 >
                     <motion.button 
