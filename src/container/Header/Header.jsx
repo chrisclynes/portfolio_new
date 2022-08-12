@@ -1,5 +1,6 @@
 import { AppWrapper } from '../../wrapper'
 import { motion } from 'framer-motion';
+import { IoIosArrowDown } from 'react-icons/io'
 
 import './Header.scss';
 
@@ -25,6 +26,15 @@ const Header = () => {
                 </motion.div>
             </div>
             <motion.div
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 0.5 }}
+                    className="down-arrow-container"
+                >
+                    <div className="app__flex">
+                        <a href="#about" className="down-arrow"><IoIosArrowDown /></a>
+                    </div>
+            </motion.div>
+            <motion.div
                     initial={{ x: 30, opacity: 0}}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 1.5, duration: 0.5 }}
@@ -33,7 +43,7 @@ const Header = () => {
                     <div className="projects-btn app__flex">
                         <a href="#projects" className="alt-text">Projects</a>
                     </div>
-                </motion.div>
+            </motion.div>
         </div>
     )
 }
