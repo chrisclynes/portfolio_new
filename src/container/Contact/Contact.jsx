@@ -91,6 +91,7 @@ const Contact = () => {
                                 value={name} 
                                 required
                                 onChange={handleInput} 
+                                maxLength="100"
                             />
                         </div>
                         <div className="app__flex">
@@ -101,6 +102,7 @@ const Contact = () => {
                                 value={email} 
                                 required
                                 onChange={handleInput} 
+                                maxLength="100"
                             />
                         </div>
                         <div className="app__flex">
@@ -110,6 +112,7 @@ const Contact = () => {
                                 placeholder="Send me a message" 
                                 value={message} 
                                 onChange={handleInput} 
+                                maxLength="500"
                             />
                         </div>
                     </form>

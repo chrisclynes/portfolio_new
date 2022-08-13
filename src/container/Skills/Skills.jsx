@@ -20,7 +20,7 @@ const Skills = () => {
     ];
     //add to experiences
     const experienceArr = [
-        { name: "Web Developer", description: "Self-taught front end developer with a primary focus on ReactJS web applications." },
+        { name: "Web Developer", description: "Self-taught front end developer with a primary focus on React JS web applications." },
         { name: "IT Technician", company: "UPS", description: "8+ years of technical support for computer systems and network infrastructure in a modern corporate environment." },
     ]
     
