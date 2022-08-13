@@ -2,6 +2,12 @@
 
 This project is hosted @ (https://chrisclynes.com).
 
+### Tech Stack :
++ React
++ SASS
++ Framer Motion
+
+
 ### To start dev server :
 ### `npm start`
 
