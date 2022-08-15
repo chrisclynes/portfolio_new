@@ -9,14 +9,13 @@ export const pageSections = ['home', 'about', 'projects', 'skills', 'contact' ];
 
 const App = () => {
     const [activePage, setActivePage] = useState("");
-    const [filteredDataChanged, setFilteredDataChanged] = useState(false)
+    const [triggerScrollSpy, setTriggerScrollSpy] = useState(true);
     const pageHeight = useRef(window.innerHeight);
     const sectionsData = useRef({});
-    const pageLoaded = useRef(false);
-    
     
     useEffect(() => {
         const updateWindowHeight = () => {
+            console.log("triggered");
           const newHeight = window.innerHeight;
             pageHeight.current = newHeight;
             //build sectionsData for each section height middle point, 
@@ -24,40 +23,39 @@ const App = () => {
             pageSections.forEach((section, i) => {
                 const height = document.querySelector(`#${section}`).offsetHeight;
                 sectionsData.current[i] = i === 0 ? height/2 : height + sectionsData.current[i-1];
-            })
-            
-            
-        };
-        if(!pageLoaded.current) {
+            })   
+        }
+       
+        if(triggerScrollSpy) {
             updateWindowHeight()
         } 
         window.addEventListener("resize", updateWindowHeight);
-    
-        return () => window.removeEventListener("resize", updateWindowHeight) 
-      }, [pageHeight, filteredDataChanged]);
+        
+        return () => window.removeEventListener("resize", updateWindowHeight);
+      }, [pageHeight, triggerScrollSpy]);
 
     useEffect(() => {
         const scrollSpy = () => {
             const len = pageSections.length;
-            const scrollTop = window.scrollY
+            const scrollTop = window.scrollY;
             //loop values and compare current y position to determine active section
             for(let i = 0; i < len; i++){
                 if(scrollTop < sectionsData.current[0]){
-                    setActivePage(pageSections[0])
+                    setActivePage(pageSections[0]);
                 }else if(scrollTop < sectionsData.current[i] && scrollTop > sectionsData.current[i-1]){
-                    setActivePage(pageSections[i])
+                    setActivePage(pageSections[i]);
                 }
             }
         }
         //load once onload, determines position on refresh or initial load
-        if(!pageLoaded.current) {
+        if(triggerScrollSpy) {
             scrollSpy()
         } 
         window.addEventListener('scroll', scrollSpy);
-        pageLoaded.current = true;
-
+        setTriggerScrollSpy(false);
+        
         return () => window.removeEventListener('scroll', scrollSpy)
-    }, [pageHeight])
+    }, [pageHeight, triggerScrollSpy])
 
    //----------------APP RENDER--------------------------------
     return ( 
@@ -68,7 +66,7 @@ const App = () => {
                 <Navbar />
                 <Header />
                 <About />
-                <Projects active={activePage} filteredDataChanged={filteredDataChanged} setFilteredDataChanged={setFilteredDataChanged} />
+                <Projects setTriggerScrollSpy={setTriggerScrollSpy} />
                 <Skills />
                 <Contact />
             </div>

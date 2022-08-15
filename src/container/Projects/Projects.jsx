@@ -11,7 +11,7 @@ import { images } from '../../constants';
 
 const { gt01, gt02, gt03, gt04, notes01, notes02, webdex01, webdex02, webdex03, weather01 } = images;
 
-const Projects = ({ filteredDataChanged, setFilteredDataChanged }) => {
+const Projects = ({ setTriggerScrollSpy }) => {
     const [activeFilter, setActiveFilter] = useState('All');
     const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
     const [filteredData, setFilteredData] = useState();
@@ -21,38 +21,31 @@ const Projects = ({ filteredDataChanged, setFilteredDataChanged }) => {
         {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
         {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
         {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
-        {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
-        {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
-        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
-        {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
-        {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
-        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
-        {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
-        {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
-        {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
     ];
 
     const optionsFilter = ['UI/UX', 'API', 'React JS', 'Full-stack', 'All'];
 
     useEffect(() => {
         setFilteredData(projectsArr)
-        console.log(filteredDataChanged)
         
     }, [])
 
     const handleFilter = (item) => {
         setActiveFilter(item);
         setAnimateCard([{opacity: 0}]);
-        setFilteredDataChanged(true);
 
         setTimeout(() => {
             setAnimateCard([{ opacity: 1}]);
             if(item === 'All') {
                 setFilteredData(projectsArr);
-            }else {
+                
+             }else {
                 setFilteredData(projectsArr.filter((project) => project.tags.includes(item)));
             }
-        }, 500);
+            setTriggerScrollSpy(true)
+                
+        }, 300)
+        
     }
     
     return (
