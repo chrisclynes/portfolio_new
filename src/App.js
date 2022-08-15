@@ -9,9 +9,11 @@ export const pageSections = ['home', 'about', 'projects', 'skills', 'contact' ];
 
 const App = () => {
     const [activePage, setActivePage] = useState("");
+    const [filteredDataChanged, setFilteredDataChanged] = useState(false)
     const pageHeight = useRef(window.innerHeight);
     const sectionsData = useRef({});
     const pageLoaded = useRef(false);
+    
     
     useEffect(() => {
         const updateWindowHeight = () => {
@@ -24,6 +26,7 @@ const App = () => {
                 sectionsData.current[i] = i === 0 ? height/2 : height + sectionsData.current[i-1];
             })
             
+            
         };
         if(!pageLoaded.current) {
             updateWindowHeight()
@@ -31,7 +34,7 @@ const App = () => {
         window.addEventListener("resize", updateWindowHeight);
     
         return () => window.removeEventListener("resize", updateWindowHeight) 
-      }, [pageHeight]);
+      }, [pageHeight, filteredDataChanged]);
 
     useEffect(() => {
         const scrollSpy = () => {
@@ -65,7 +68,7 @@ const App = () => {
                 <Navbar />
                 <Header />
                 <About />
-                <Projects />
+                <Projects active={activePage} filteredDataChanged={filteredDataChanged} setFilteredDataChanged={setFilteredDataChanged} />
                 <Skills />
                 <Contact />
             </div>

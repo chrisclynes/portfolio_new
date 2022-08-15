@@ -9,7 +9,8 @@ const arrowVariants = {
         scale: 1.2,
         transition: {
             duration: 0.3,
-            yoyo: Infinity
+            repeatType: "reverse",
+            repeat: Infinity
         }
     }
 }
