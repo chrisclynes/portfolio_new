@@ -42,7 +42,7 @@ const Projects = ({ setTriggerScrollSpy }) => {
              }else {
                 setFilteredData(projectsArr.filter((project) => project.tags.includes(item)));
             }
-            setTriggerScrollSpy(true)
+            setTriggerScrollSpy(true)//triggers App.js useEffects for new section height for scrollSpy
                 
         }, 300)
         
