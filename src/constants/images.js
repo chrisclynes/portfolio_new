@@ -16,6 +16,8 @@ import gt01 from '../images/guitartoolbox01.JPG';
 import gt02 from '../images/guitartoolbox02.JPG';
 import gt03 from '../images/guitartoolbox03.JPG';
 import gt04 from '../images/guitartoolbox04.JPG';
+import techsite01 from '../images/techsite01.JPG';
+import techsite02 from '../images/techsite02.JPG';
 import notes01 from '../images/notes01.JPG';
 import notes02 from '../images/notes02.JPG';
 import webdex01 from '../images/webdex01.JPG';
@@ -48,6 +50,8 @@ export default {
   gt04,
   logo,
   whitebkg,
+  techsite01,
+  techsite02,
   notes01,
   notes02,
   webdex01,
