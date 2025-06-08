@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import './Projects.scss';
 import { images } from '../../constants';
 
-const { gt01, gt02, gt03, gt04, techsite01, techsite02,  notes01, notes02, webdex01, webdex02, webdex03, weather01 } = images;
+const { gt01, gt02, gt03, gt04, techsite01, techsite02,  notes01, notes02, webdex01, webdex02, webdex03, weather01, rest01, rest02 } = images;
 
 const Projects = ({ setTriggerScrollSpy }) => {
     const [activeFilter, setActiveFilter] = useState('All');
@@ -19,8 +19,9 @@ const Projects = ({ setTriggerScrollSpy }) => {
     //image sizes are 600x426
     const projectsArr = [
         {name: "Guitar Toolbox", description: "React app for guitar training", link: "https://guitartoolbox-prod.web.app/", codeLink: "https://github.com/ChrisClynes/guitar-toolbox", img: [gt01, gt02, gt03, gt04], tags: ["UI/UX", "React JS", "Full-stack", "API"] },
-        {name: "Tech Website", description: "Demo of tech business", link: "https://chrisclynes.github.io/tech_website/", codeLink: "https://github.com/ChrisClynes/tech_website", img: [techsite01, techsite02], tags: ["UI/UX"] },
+        {name: "Restaurant Website", description: "Demo of an Italian restaurant ", link: "https://chrisclynes.github.io/restaurant-website/", codeLink: "https://github.com/chrisclynes/restaurant-website", img: [rest01, rest02], tags: ["React JS","UI/UX"] },
         {name: "Notes", description: "React notes application", link: "https://chrisclynes.github.io/notes-app/", codeLink: "https://github.com/chrisclynes/notes-app", img: [notes01, notes02], tags: ["React JS", "UI/UX" ] },
+        {name: "Tech Website", description: "Demo of tech business", link: "https://chrisclynes.github.io/tech_website/", codeLink: "https://github.com/ChrisClynes/tech_website", img: [techsite01, techsite02], tags: ["UI/UX"] },
         {name: "Weather API", description: "Weather application", link: "https://codepen.io/christoph09/pen/VwywzqG", codeLink: "https://github.com/chrisclynes/Weather-API-App", img: [weather01], tags: ["API"] },
         {name: "Web Dex", description: "Google clone app", link: "https://chrisclynes.github.io/webdex/", codeLink: "https://github.com/chrisclynes/webdex", img: [webdex02, webdex01, webdex03], tags: ["API", "React JS"] },
     ];

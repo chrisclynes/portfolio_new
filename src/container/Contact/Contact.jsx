@@ -127,7 +127,7 @@ const Contact = () => {
                 </div>
                 :
                 <div className="app__form-submitted app__flex" style={error ? {backgroundColor: "tomato"}: null}>
-                    <h4 className="head-text2">{!error ? "Thank you!" : "Failed to send message"}</h4>
+                    <h4 className="head-text2">{!error ? "Thank you, your message has been received!" : "Failed to send message"}</h4>
                     {error &&
                         <button 
                         type="button"
@@ -157,7 +157,9 @@ const Contact = () => {
                         </div>
                     </a>
                 </div>
-                <div className="app__copyright p-text">2022 Chris Clynes</div>
+                <div className="app__copyright p-text">
+                    Copyright {new Date().getFullYear()} Chris Clynes
+                </div>
             </div>
         </>
     )

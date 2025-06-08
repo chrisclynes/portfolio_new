@@ -5,23 +5,29 @@ import { images } from '../../constants';
 import './Skills.scss';
 
 const Skills = () => {
-    const {sass, react, figma, api, git, html, javascript, css, firebase} = images;
+    const {sass, react, figma, api, git, html, javascript, css, firebase, sql, nodejs, php, wordpress, zapier } = images;
     
     //add to skills
     const skillsArr = [
         {name: "JavaScript", icon: javascript },
-        {name: "React JS", icon: react },
-        {name: "SASS", icon: sass },
-        {name: "API", icon: api, href: "https://icons8.com/icon/kM1Cl69rI7go/api" },
-        {name: "Git", icon: git },
         {name: "HTML 5", icon: html },
         {name: "CSS", icon: css },
+        {name: "PHP", icon: php },
+        {name: "Wordpress", icon: wordpress },
+        {name: "Zapier", icon: zapier },
+        {name: "React JS", icon: react },
+        {name: "SASS", icon: sass },
+        {name: "figma", icon: figma },
+        {name: "API", icon: api, href: "https://icons8.com/icon/kM1Cl69rI7go/api" },
+        {name: "Git", icon: git },
+        {name: "SQL", icon: sql, href: "https://flaticon.com/free-icons/sql-server" },
+        {name: "Node.js", icon: nodejs },
         {name: "Firebase", icon: firebase, href: "https://icons8.com/icon/62452/firebase" },
     ];
     //add to experiences
     const experienceArr = [
-        { name: "Web Developer", description: "Self-taught front end developer with a primary focus on React JS web applications." },
-        { name: "IT Technician", company: "UPS", description: "8+ years of technical support for computer systems and network infrastructure in a modern corporate environment." },
+        { name: "Full-Stack Web Developer", company: "GetUWired", description: "I build custom websites and applications across a wide range of platforms—including WordPress, React, and various e-commerce systems—tailored to meet specific business goals. From marketing sites to complex membership platforms, I develop seamless integrations, scalable databases, and automation workflows that connect CRMs, payment gateways, and third-party APIs. Delivering practical, end-to-end solutions for all your web needs." },
+        { name: "IT Technician", company: "UPS", description: "Over 8 years of hands-on experience providing technical support for computer systems, network infrastructure, and enterprise hardware in a fast-paced corporate environment. Skilled in troubleshooting, system maintenance, end-user support, and ensuring uptime and reliability across critical business operations." },
     ]
     
     return (
